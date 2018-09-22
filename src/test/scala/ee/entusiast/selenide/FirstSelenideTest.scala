@@ -33,6 +33,5 @@ class FirstSelenideTest extends FreeSpec {
     val hasExactText = ""
     $(By.className(targetclassNameAttribute)).shouldBe(Condition.exactText(hasExactText))
 
-
   }
 }
