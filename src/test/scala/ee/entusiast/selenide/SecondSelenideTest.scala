@@ -5,7 +5,7 @@ import com.codeborne.selenide.Condition
 import org.openqa.selenium.By
 import org.scalatest.FreeSpec
 
-class SecondSelenideTest extends FreeSpec{
+class SecondSelenideTest extends FreeSpec {
 
   "execute joint code from separate method (1)" in {
     openGoogle
@@ -21,20 +21,17 @@ class SecondSelenideTest extends FreeSpec{
   }
 
 
-  def openGoogle:Unit = {
+  def openGoogle:Unit =
     open("http://www.google.com")
-  }
 
-  def inputTextAndPressEnter(text: String): Unit = {
+
+  def inputTextAndPressEnter(text: String): Unit =
     $(By.name("q"))
       .setValue(text)
       .pressEnter()
-  }
 
-  def assertHasResult(shouldHaveText: String): Unit =  {
-    $(By.xpath(s"//a[text()='$shouldHaveText']")).shouldBe(Condition.visible)
-
-  }
-
-
+  def assertHasResult(shouldHaveText: String): Unit =
+    $(By.xpath(s"//a[text()='$shouldHaveText']"))
+      .shouldBe(Condition.visible)
 }
+
